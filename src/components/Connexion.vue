@@ -64,7 +64,7 @@ export default {
     async login(e) {
       e.preventDefault();
       try {
-        const res = await axios.post(`https://oska-tindermovie.herokuapp.com/auth/local`, {
+        const res = await axios.post(`https://oska-tinderback.herokuapp.com/auth/local`, {
           identifier: this.email,
           password: this.password,
         });

@@ -59,7 +59,7 @@ export default {
     async register(e) {
       try {
         e.preventDefault();
-        await axios.post(`https://oska-tindermovie.herokuapp.com/auth/local/register`, {
+        await axios.post(`https://oska-tinderback.herokuapp.com/auth/local/register`, {
           name: this.name,
           password: this.password,
           email: this.email,

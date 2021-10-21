@@ -45,7 +45,7 @@ export default {
       let array2 = [];
       let filteredArray = [];
 
-      await axios.get("https://oska-tindermovie.herokuapp.com/users").then((response) => {
+      await axios.get("https://oska-tinderback.herokuapp.com/users").then((response) => {
         this.tabs = response.data.filter((b) => b.username === this.pseudo);
 
         if (this.tabs) {
@@ -55,7 +55,7 @@ export default {
         }
       }),
         await axios
-          .get(`https://oska-tindermovie.herokuapp.com/users/${this.user.id}`)
+          .get(`https://oska-tinderback.herokuapp.com/users/${this.user.id}`)
           .then((response) => {
             response.data.bookmarks.forEach((element) =>
               array2.push(element.identifiantFilm)

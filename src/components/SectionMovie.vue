@@ -78,7 +78,7 @@ import axios from 'axios'
                             this.filmEnregistre.push(bookmarkItem)
                             //set to localstorage
                             window.localStorage.setItem('filmEnregistre', JSON.stringify(this.filmEnregistre))
-                            await axios.post(`http://localhost:1337/bookmarks`, {
+                            await axios.post(`https://oska-tinderback.herokuapp.com/bookmarks`, {
                                 nomDuFilm:nomDuFilm,
                                 identifiantFilm:identifiantFilm,
                                 users_permissions_users: user_id
@@ -89,7 +89,7 @@ import axios from 'axios'
                                     Authorization: `Bearer ${window.localStorage.getItem('jwt')}`,
                                 },
                             })
-                            const res =  await axios.get(`http://localhost:1337/users/${bookmarkItem.users_permissions_user}`, {
+                            const res =  await axios.get(`https://oska-tinderback.herokuapp.com/users/${user_id}`, {
                                 headers: {
                                     Authorization: `Bearer ${window.localStorage.getItem('jwt')}`,
                                 }
