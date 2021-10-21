@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <h1><span>Tinder</span> Movie</h1>
+      <h2>Entrez un nom d'utilisateur pour comparer votre liste</h2>
       <div class="col-12">
       <div class="recherche">
       <input type="text" v-model="pseudo" /><button v-on:click="searchUser">
@@ -22,13 +23,20 @@
       </ul>
       </div>
     </div>
+    <headerBottom></headerBottom>
   </div>
+  
 </template>
+
 
 <script>
 import axios from "axios";
-
+import headerBottom from './headerBottom'
 export default {
+  name:"sectioncomparaison",
+  components: {
+    headerBottom
+  },
   data() {
     return {
       user: {},
@@ -45,7 +53,9 @@ export default {
       let array2 = [];
       let filteredArray = [];
 
-      await axios.get("https://oska-tinderback.herokuapp.com/users").then((response) => {
+      await axios
+      .get("https://oska-tinderback.herokuapp.com/users")
+      .then((response) => {
         this.tabs = response.data.filter((b) => b.username === this.pseudo);
 
         if (this.tabs) {
