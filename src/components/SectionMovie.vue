@@ -51,7 +51,7 @@ import headerBottom from './headerBottom'
         methods:{
             searchMovie(){
                 
-                const random = Math.floor(Math.random() * 1000);
+                const random = Math.floor(Math.random() * 600000);
                 axios
                 .get(`${this.url_recherche}${random}?api_key=${this.api_code}`)
                 .then(response =>{
